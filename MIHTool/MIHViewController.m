@@ -79,4 +79,22 @@ static NSString * const kLayerBordersKey = @"WebKitShowDebugBorders";
     NSURLRequest *request = [NSURLRequest requestWithURL:urlStr];
     [self.pageView loadRequest:request];
 }
+
+- (IBAction)hideToolbar:(id)sender {
+    [self.tBar setHidden:YES];
+    [self.bBar setHidden:YES];
+    self.pageView.frame = self.view.bounds;
+    [self.pageView reload];
+}
+
+- (IBAction)hideTBar:(id)sender {
+    [self.tBar setHidden:YES];
+    self.pageView.frame = self.view.bounds;
+    [self.pageView reload];
+}
+- (void)viewDidUnload {
+    [self setBBar:nil];
+    [self setTBar:nil];
+    [super viewDidUnload];
+}
 @end

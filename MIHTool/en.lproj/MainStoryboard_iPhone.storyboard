@@ -36,7 +36,8 @@
                             </toolbar>
                             <webView contentMode="scaleToFill" scalesPageToFit="YES" id="wDz-jI-Fwa">
                                 <rect key="frame" x="0.0" y="44" width="326" height="460"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES" flexibleMaxY="YES"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" heightSizable="YES" flexibleMaxY="YES"/>
+                                <gestureRecognizers/>
                                 <dataDetectorType key="dataDetectorTypes" phoneNumber="YES" link="YES" address="YES" calendarEvent="YES"/>
                                 <connections>
                                     <outlet property="delegate" destination="2" id="1wH-5l-XaE"/>
@@ -61,12 +62,17 @@
                                             <action selector="stopLoading" destination="wDz-jI-Fwa" id="pkW-jn-4dn"/>
                                         </connections>
                                     </barButtonItem>
+                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="wqy-sW-mH6"/>
+                                    <barButtonItem title="F11" id="qHj-4l-Xni">
+                                        <connections>
+                                            <action selector="hideToolbar:" destination="2" id="5dw-C0-qoQ"/>
+                                        </connections>
+                                    </barButtonItem>
                                     <barButtonItem title="?" id="LA3-qq-OrH">
                                         <connections>
                                             <action selector="loadHome:" destination="2" id="fIY-vg-Bol"/>
                                         </connections>
                                     </barButtonItem>
-                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="wqy-sW-mH6"/>
                                     <barButtonItem style="plain" id="hzI-dH-McT">
                                         <switch key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" id="BFH-87-J68">
                                             <rect key="frame" x="229" y="9" width="79" height="27"/>
@@ -82,8 +88,10 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
                     <connections>
+                        <outlet property="bBar" destination="OCL-vK-0MA" id="Qvo-5v-kNA"/>
                         <outlet property="layerBorderSwitch" destination="BFH-87-J68" id="aaa-vJ-S0V"/>
                         <outlet property="pageView" destination="wDz-jI-Fwa" id="YU7-Zz-lSC"/>
+                        <outlet property="tBar" destination="QMF-SL-CqL" id="Ew0-dS-DHx"/>
                         <outlet property="urlField" destination="r7g-aA-t2T" id="AJy-yv-GtC"/>
                     </connections>
                 </viewController>
@@ -95,12 +103,16 @@
         <class className="MIHViewController" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/MIHViewController.h"/>
             <relationships>
+                <relationship kind="action" name="hideTBar:"/>
+                <relationship kind="action" name="hideToolbar:"/>
                 <relationship kind="action" name="launch:"/>
                 <relationship kind="action" name="loadHome:"/>
                 <relationship kind="action" name="loadUrl:"/>
                 <relationship kind="action" name="switchWebKitDebugBorders:"/>
+                <relationship kind="outlet" name="bBar" candidateClass="UIToolbar"/>
                 <relationship kind="outlet" name="layerBorderSwitch" candidateClass="UISwitch"/>
                 <relationship kind="outlet" name="pageView" candidateClass="UIWebView"/>
+                <relationship kind="outlet" name="tBar" candidateClass="UIToolbar"/>
                 <relationship kind="outlet" name="urlField" candidateClass="UITextField"/>
             </relationships>
         </class>

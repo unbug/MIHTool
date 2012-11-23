@@ -55,7 +55,7 @@
                                     </barButtonItem>
                                     <barButtonItem style="plain" id="dWI-Qi-kUB">
                                         <textField key="customView" opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="http://www" minimumFontSize="17" clearButtonMode="whileEditing" id="MSr-tt-TN9">
-                                            <rect key="frame" x="280" y="7" width="441" height="30"/>
+                                            <rect key="frame" x="280" y="7" width="390" height="30"/>
                                             <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                             <textInputTraits key="textInputTraits" keyboardType="URL" returnKeyType="go" enablesReturnKeyAutomatically="YES"/>
@@ -65,6 +65,11 @@
                                         </textField>
                                     </barButtonItem>
                                     <barButtonItem systemItem="flexibleSpace" id="1fv-kw-mkq"/>
+                                    <barButtonItem title="F11" id="6DO-GL-ecj">
+                                        <connections>
+                                            <action selector="hideTBar:" destination="2" id="R9B-Lv-NPc"/>
+                                        </connections>
+                                    </barButtonItem>
                                     <barButtonItem title="?" id="7CG-Fz-dUw">
                                         <connections>
                                             <action selector="loadHome:" destination="2" id="tlZ-9T-dNr"/>
@@ -78,6 +83,7 @@
                     <connections>
                         <outlet property="layerBorderSwitch" destination="jI8-Xj-Ash" id="t44-N2-A4o"/>
                         <outlet property="pageView" destination="APj-MY-bom" id="aKJ-zY-krE"/>
+                        <outlet property="tBar" destination="MEm-kv-6yJ" id="Bsu-6X-Uxe"/>
                         <outlet property="urlField" destination="MSr-tt-TN9" id="w0v-vZ-PoI"/>
                     </connections>
                 </viewController>
@@ -85,20 +91,6 @@
             </objects>
         </scene>
     </scenes>
-    <classes>
-        <class className="MIHViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/MIHViewController.h"/>
-            <relationships>
-                <relationship kind="action" name="launch:"/>
-                <relationship kind="action" name="loadHome:"/>
-                <relationship kind="action" name="loadUrl:"/>
-                <relationship kind="action" name="switchWebKitDebugBorders:"/>
-                <relationship kind="outlet" name="layerBorderSwitch" candidateClass="UISwitch"/>
-                <relationship kind="outlet" name="pageView" candidateClass="UIWebView"/>
-                <relationship kind="outlet" name="urlField" candidateClass="UITextField"/>
-            </relationships>
-        </class>
-    </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar" statusBarStyle="blackTranslucent"/>
         <simulatedOrientationMetrics key="orientation"/>

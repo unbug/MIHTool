@@ -69,7 +69,7 @@ static NSString * const kLayerBordersKey = @"WebKitShowDebugBorders";
     //[self loadHome:self];
 }
 -(IBAction) loadHome:(id)sender{
-    NSString *str = @"https://github.com/unbug/MIHTool";
+    NSString *str = @"http://www.iunbug.com/mihtool";
     [self.pageView loadRequest:[NSURLRequest requestWithURL:[NSURL URLWithString:str]]];
 }
 

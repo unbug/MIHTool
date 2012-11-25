@@ -4,7 +4,7 @@ MIHTool helps  font-end engineer who works on mobile web app to debug his web pa
 
 ## Right now:
 
-You may install it on you iOS device with iOS5+.
+You may install it on your iOS device with iOS5+.
 To see the Composited Render Layer Borders just switch the button to ON and restart the app.
 You may visit your web page as you want with the address bar.
 

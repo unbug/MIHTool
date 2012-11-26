@@ -29,6 +29,22 @@ static NSString * const kLayerBordersKey = @"WebKitShowDebugBorders";
 {
     [super didReceiveMemoryWarning];
 }
+-(BOOL) canBecomeFirstResponder
+{
+    return YES;
+}
+
+-(void) motionEnded:(UIEventSubtype)motion withEvent:(UIEvent *)event
+{
+    if(event.subtype==UIEventSubtypeMotionShake)
+    {
+        if(self.tBar.hidden){
+            [self showToolBars];
+        }else{
+            [self hideToolBars];
+        }
+    }
+}
 -(BOOL)shouldAutorotateToInterfaceOrientation:( UIInterfaceOrientation)interfaceOrientation
 {
     return YES;
@@ -81,15 +97,23 @@ static NSString * const kLayerBordersKey = @"WebKitShowDebugBorders";
 }
 
 - (IBAction)hideToolbar:(id)sender {
+    [self hideToolBars];
+}
+
+- (IBAction)hideTBar:(id)sender {
+    [self hideToolBars];
+}
+-(void)hideToolBars{
     [self.tBar setHidden:YES];
     [self.bBar setHidden:YES];
     self.pageView.frame = self.view.bounds;
     [self.pageView reload];
 }
-
-- (IBAction)hideTBar:(id)sender {
-    [self.tBar setHidden:YES];
-    self.pageView.frame = self.view.bounds;
+-(void)showToolBars{
+    [self.tBar setHidden:NO];
+    [self.bBar setHidden:NO];
+    self.pageView.frame = CGRectMake(0,self.tBar.frame.size.height,
+                               self.view.bounds.size.width,self.view.bounds.size.height-self.bBar.frame.size.height-self.tBar.frame.size.height);
     [self.pageView reload];
 }
 - (void)viewDidUnload {

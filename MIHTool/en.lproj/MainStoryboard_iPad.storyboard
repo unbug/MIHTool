@@ -91,6 +91,24 @@
             </objects>
         </scene>
     </scenes>
+    <classes>
+        <class className="MIHViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/MIHViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="hideTBar:"/>
+                <relationship kind="action" name="hideToolbar:"/>
+                <relationship kind="action" name="launch:"/>
+                <relationship kind="action" name="loadHome:"/>
+                <relationship kind="action" name="loadUrl:"/>
+                <relationship kind="action" name="switchWebKitDebugBorders:"/>
+                <relationship kind="outlet" name="bBar" candidateClass="UIToolbar"/>
+                <relationship kind="outlet" name="layerBorderSwitch" candidateClass="UISwitch"/>
+                <relationship kind="outlet" name="pageView" candidateClass="UIWebView"/>
+                <relationship kind="outlet" name="tBar" candidateClass="UIToolbar"/>
+                <relationship kind="outlet" name="urlField" candidateClass="UITextField"/>
+            </relationships>
+        </class>
+    </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar" statusBarStyle="blackTranslucent"/>
         <simulatedOrientationMetrics key="orientation"/>
